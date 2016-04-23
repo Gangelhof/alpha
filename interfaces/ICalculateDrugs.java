@@ -12,5 +12,5 @@ import alpha.model.Drug;
  * @author RunEvil
  */
 public interface ICalculateDrugs {
-    Drug doChangePrice(Drug drug);
+    Drug recalculateDrug(Drug drug);
 }
