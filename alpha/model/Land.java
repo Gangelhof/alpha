@@ -1,4 +1,3 @@
-
 package alpha.model;
 
 import java.util.ArrayList;
@@ -68,6 +67,16 @@ public class Land {
                antal3 * this.stoffer.get(3).getPris()+
                antal4 * this.stoffer.get(4).getPris()+
                antal5 * this.stoffer.get(5).getPris();
+    }
+    
+    public void Reberegn_stoffer()
+    {
+        this.stoffer.get(0).Reberegn_stof();
+        this.stoffer.get(1).Reberegn_stof();
+        this.stoffer.get(2).Reberegn_stof();
+        this.stoffer.get(3).Reberegn_stof();
+        this.stoffer.get(4).Reberegn_stof();
+        this.stoffer.get(5).Reberegn_stof();
     }
     
     
