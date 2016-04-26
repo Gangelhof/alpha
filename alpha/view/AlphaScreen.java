@@ -1,4 +1,3 @@
-
 package alpha.view;
 
 import alpha.model.Land;
@@ -44,7 +43,8 @@ public class AlphaScreen extends javax.swing.JPanel {
         ButtonGO.setEnabled(false);
         ButtonBuy.setEnabled(true);
         ButtonSell.setEnabled(true);
- 
+        ButtonEnd.setEnabled(false);
+        
         visland(landindex(OurCountry.getSelectedItem().toString()));
         visbruger();
     }
@@ -140,7 +140,7 @@ public class AlphaScreen extends javax.swing.JPanel {
     
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         PanelChoose = new javax.swing.JPanel();
@@ -190,6 +190,7 @@ public class AlphaScreen extends javax.swing.JPanel {
         TextNr = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         LastInfo = new javax.swing.JTextField();
+        ButtonEnd = new javax.swing.JButton();
 
         PanelChoose.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -578,21 +579,39 @@ public class AlphaScreen extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         LastInfo.setEditable(false);
+        LastInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LastInfoActionPerformed(evt);
+            }
+        });
+
+        ButtonEnd.setBackground(new java.awt.Color(153, 0, 0));
+        ButtonEnd.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonEnd.setText("END");
+        ButtonEnd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEndActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
-                .addComponent(LastInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                .addGap(38, 38, 38)
+                .addComponent(LastInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(ButtonEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LastInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LastInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonEnd))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -628,13 +647,14 @@ public class AlphaScreen extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanelP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(PanelChoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void ButtonGOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGOActionPerformed
-            
-         this.nuland = OurCountry.getSelectedItem().toString();
+    private void ButtonGOActionPerformed(java.awt.event.ActionEvent evt) {                                         
+     
+        
+            this.nuland = OurCountry.getSelectedItem().toString();
     
             lande[landindex(nuland)].Reberegn_stoffer();
             
@@ -662,9 +682,9 @@ public class AlphaScreen extends javax.swing.JPanel {
             SellPrice.setText(spris + "");
             
         
-    }//GEN-LAST:event_ButtonGOActionPerformed
+    }                                        
 
-    private void OurCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OurCountryActionPerformed
+    private void OurCountryActionPerformed(java.awt.event.ActionEvent evt) {                                           
         
         if (OurCountry.getSelectedItem().toString().equals(nuland) == false)
         {
@@ -679,9 +699,9 @@ public class AlphaScreen extends javax.swing.JPanel {
             ButtonSell.setEnabled(true);                        
         }     
         
-    }//GEN-LAST:event_OurCountryActionPerformed
+    }                                          
 
-    private void B0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0ActionPerformed
+    private void B0ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         
         if (igang == true)
         {
@@ -694,9 +714,9 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(B5.getSelectedItem().toString()));
            BuyPrice.setText(bpris + "");
         }
-    }//GEN-LAST:event_B0ActionPerformed
+    }                                  
 
-    private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
+    private void B1ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         
         if (igang == true)
         {
@@ -709,9 +729,9 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(B5.getSelectedItem().toString()));
            BuyPrice.setText(bpris + "");
         }
-    }//GEN-LAST:event_B1ActionPerformed
+    }                                  
 
-    private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
+    private void B2ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         
         if (igang == true)
         {
@@ -724,9 +744,9 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(B5.getSelectedItem().toString()));
            BuyPrice.setText(bpris + "");
         }
-    }//GEN-LAST:event_B2ActionPerformed
+    }                                  
 
-    private void B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B3ActionPerformed
+    private void B3ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         
         if (igang == true)
         {
@@ -739,9 +759,9 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(B5.getSelectedItem().toString()));
            BuyPrice.setText(bpris + "");
         }
-    }//GEN-LAST:event_B3ActionPerformed
+    }                                  
 
-    private void B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B4ActionPerformed
+    private void B4ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         
         if (igang == true)
         {
@@ -754,9 +774,9 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(B5.getSelectedItem().toString()));
            BuyPrice.setText(bpris + "");
         }
-    }//GEN-LAST:event_B4ActionPerformed
+    }                                  
 
-    private void B5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B5ActionPerformed
+    private void B5ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         
         if (igang == true)
         {
@@ -769,9 +789,9 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(B5.getSelectedItem().toString()));
            BuyPrice.setText(bpris + "");
         }
-    }//GEN-LAST:event_B5ActionPerformed
+    }                                  
 
-    private void S0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_S0ActionPerformed
+    private void S0ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         
         if (igang == true)
         {
@@ -784,9 +804,9 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(S5.getSelectedItem().toString()));
            SellPrice.setText(spris + "");
         }
-    }//GEN-LAST:event_S0ActionPerformed
+    }                                  
 
-    private void S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_S1ActionPerformed
+    private void S1ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         
         if (igang == true)
         {
@@ -799,9 +819,9 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(S5.getSelectedItem().toString()));
            SellPrice.setText(spris + "");
         }
-    }//GEN-LAST:event_S1ActionPerformed
+    }                                  
 
-    private void S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_S2ActionPerformed
+    private void S2ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         
         if (igang == true)
         {
@@ -814,9 +834,9 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(S5.getSelectedItem().toString()));
            SellPrice.setText(spris + "");
         }
-    }//GEN-LAST:event_S2ActionPerformed
+    }                                  
 
-    private void S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_S3ActionPerformed
+    private void S3ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         
         if (igang == true)
         {
@@ -829,9 +849,9 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(S5.getSelectedItem().toString()));
            SellPrice.setText(spris + "");
         }
-    }//GEN-LAST:event_S3ActionPerformed
+    }                                  
 
-    private void S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_S4ActionPerformed
+    private void S4ActionPerformed(java.awt.event.ActionEvent evt) {                                   
        
         if (igang == true)
         {
@@ -844,9 +864,9 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(S5.getSelectedItem().toString()));
            SellPrice.setText(spris + "");
         }
-    }//GEN-LAST:event_S4ActionPerformed
+    }                                  
 
-    private void S5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_S5ActionPerformed
+    private void S5ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         
         if (igang == true)
         {
@@ -859,12 +879,14 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(S5.getSelectedItem().toString()));
            SellPrice.setText(spris + "");
         }
-    }//GEN-LAST:event_S5ActionPerformed
+    }                                  
 
-    private void ButtonBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBuyActionPerformed
+    private void ButtonBuyActionPerformed(java.awt.event.ActionEvent evt) {                                          
         
         int index = landindex(nuland);
         
+        if (bpris <= bruger.getPenge())
+        {
         bruger.Buy(Integer.parseInt(B0.getSelectedItem().toString()),
                                           Integer.parseInt(B1.getSelectedItem().toString()),
                                           Integer.parseInt(B2.getSelectedItem().toString()),
@@ -885,9 +907,10 @@ public class AlphaScreen extends javax.swing.JPanel {
           
         visland(landindex(nuland));
         visbruger();
-    }//GEN-LAST:event_ButtonBuyActionPerformed
+        }
+    }                                         
 
-    private void ButtonSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSellActionPerformed
+    private void ButtonSellActionPerformed(java.awt.event.ActionEvent evt) {                                           
         
         
         int index = landindex(nuland);
@@ -907,18 +930,32 @@ public class AlphaScreen extends javax.swing.JPanel {
                                           Integer.parseInt(S5.getSelectedItem().toString()));
         
         
-       
-        
-        
         spris = 0;
         SellPrice.setText(spris + "");
         
         visland(landindex(nuland));
         visbruger();
-    }//GEN-LAST:event_ButtonSellActionPerformed
+    }                                          
+
+    private void ButtonEndActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        
+        this.nuland = OurCountry.getSelectedItem().toString();
+        bruger.Sell(Integer.parseInt(S0.getSelectedItem().toString()),
+                                          Integer.parseInt(S1.getSelectedItem().toString()),
+                                          Integer.parseInt(S2.getSelectedItem().toString()),
+                                          Integer.parseInt(S3.getSelectedItem().toString()),
+                                          Integer.parseInt(S4.getSelectedItem().toString()),
+                                          Integer.parseInt(S5.getSelectedItem().toString()),spris);
+        System.out.println("Her er prisen:"  );
+    }                                         
+
+    private void LastInfoActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       
+        LastInfo.setText(nuland);
+    }                                        
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JComboBox<String> B0;
     private javax.swing.JComboBox<String> B1;
     private javax.swing.JComboBox<String> B2;
@@ -926,6 +963,7 @@ public class AlphaScreen extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> B4;
     private javax.swing.JComboBox<String> B5;
     private javax.swing.JButton ButtonBuy;
+    private javax.swing.JButton ButtonEnd;
     private javax.swing.JButton ButtonGO;
     private javax.swing.JButton ButtonSell;
     private javax.swing.JTextField BuyPrice;
@@ -966,5 +1004,5 @@ public class AlphaScreen extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanelP;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
