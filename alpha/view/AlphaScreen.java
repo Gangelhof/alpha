@@ -634,22 +634,33 @@ public class AlphaScreen extends javax.swing.JPanel {
 
     private void ButtonGOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGOActionPerformed
             
-            this.nuland = OurCountry.getSelectedItem().toString();
-      
+         this.nuland = OurCountry.getSelectedItem().toString();
+    
+            lande[landindex(nuland)].Reberegn_stoffer();
+            
             visland(landindex(nuland));
         
             ButtonGO.setEnabled(false);
             ButtonBuy.setEnabled(true);
             ButtonSell.setEnabled(true);                        
-        
+            
             bruger.Go();
             visbruger();
+            
+            if (bruger.getBesogt() == 20)
+            {
+               ButtonGO.setEnabled(false);
+               ButtonBuy.setEnabled(false);
+               ButtonSell.setEnabled(false);
+               ButtonEnd.setEnabled(true);
+            }
             
             bpris = 0;
             BuyPrice.setText(bpris + "");
    
             spris = 0;
             SellPrice.setText(spris + "");
+            
         
     }//GEN-LAST:event_ButtonGOActionPerformed
 
