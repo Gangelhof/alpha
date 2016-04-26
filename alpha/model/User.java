@@ -1,4 +1,3 @@
-
 package alpha.model;
 
 import java.util.ArrayList;
@@ -75,3 +74,4 @@ public class User {
      
     
 }//slut
+
